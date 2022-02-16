@@ -18,16 +18,6 @@ export class HeroesComponent implements OnInit {
 
   heroes : Heroe[] = []
   
-  cogerHeroes(): void{
-    this.heroeService.cogerHeroes()
-      .subscribe(heroes => this.heroes = heroes)
-  }
-
-  heroe : Heroe = {
-    id:1,
-    nombre: 'Tormentoso'
-  }
-
   constructor(private heroeService: HeroeService, private mensajeService: MensajeService) { }
 
   ngOnInit(): void {
@@ -38,6 +28,11 @@ export class HeroesComponent implements OnInit {
     this.heroeSeleccionado = heroe
     this.mensajeService.añadir(`ComponenteHeroes: Heroe seleccionado id=${heroe.id}`)
   }
+
+  cogerHeroes(): void{
+    this.heroeService.cogerHeroes()
+      .subscribe(heroes => this.heroes = heroes)
+  } 
 
 
 }
