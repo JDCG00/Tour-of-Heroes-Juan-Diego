@@ -8,7 +8,11 @@
 </head>
 <body>
   <h1>{{titulo}}</h1>
-  <app-heroes></app-heroes>
+  <nav>
+    <a routerLink="/dashboard">Panel</a>
+    <a routerLink="/heroes">Heroes</a>
+  </nav>
+  <router-outlet></router-outlet>
   <app-mensajes></app-mensajes>
 </body>
 </html> 

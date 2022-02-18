@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Heroe } from '../heroe'
-import {HEROES} from '../mock-heroes'
 import { HeroeService } from '../heroe.service';
-import { MensajeService } from '../mensaje.service';
-
-import { of } from 'rxjs';
 
 @Component({
   selector: 'app-heroes',
@@ -14,19 +10,12 @@ import { of } from 'rxjs';
 })
 export class HeroesComponent implements OnInit {
 
-  heroeSeleccionado?: Heroe
-
   heroes : Heroe[] = []
   
-  constructor(private heroeService: HeroeService, private mensajeService: MensajeService) { }
+  constructor(private heroeService: HeroeService) { }
 
   ngOnInit(): void {
     this.cogerHeroes()
-  }
-
-  seleccionado(heroe : Heroe): void{
-    this.heroeSeleccionado = heroe
-    this.mensajeService.añadir(`ComponenteHeroes: Heroe seleccionado id=${heroe.id}`)
   }
 
   cogerHeroes(): void{

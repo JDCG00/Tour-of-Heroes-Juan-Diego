@@ -1,13 +1,11 @@
 <h2>Mis heroes</h2>
 <ul class="heroes">
     <li *ngFor="let heroe of heroes">
-        <button [class.selected]="heroe === heroeSeleccionado" type="button" (click)="seleccionado(heroe)">
-            <span class="badge">{{heroe.id}}</span> 
-            <span class="name">{{heroe.nombre}}</span>
-        </button>        
+        <a routerLink="/detail/{{heroe.id}}">
+            <span class="badge">{{heroe.id}}</span>{{heroe.nombre}}
+        </a>      
     </li>
 </ul>
 
-<app-detalle-heroe [heroe]="heroeSeleccionado"></app-detalle-heroe>
 
 
